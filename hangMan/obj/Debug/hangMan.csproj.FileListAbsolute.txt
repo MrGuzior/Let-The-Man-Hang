@@ -1,0 +1,5 @@
+/Users/Guzior/Projects/hangMan/hangMan/bin/Debug/hangMan.exe
+/Users/Guzior/Projects/hangMan/hangMan/bin/Debug/hangMan.pdb
+/Users/Guzior/Projects/hangMan/hangMan/obj/Debug/hangMan.csprojAssemblyReference.cache
+/Users/Guzior/Projects/hangMan/hangMan/obj/Debug/hangMan.exe
+/Users/Guzior/Projects/hangMan/hangMan/obj/Debug/hangMan.pdb

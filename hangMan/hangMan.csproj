@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">anycpu</Platform>
+    <ProjectGuid>{0F046865-556F-4714-8250-8A49EC4471AC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>hangMan</RootNamespace>
+    <AssemblyName>hangMan</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|anycpu' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|anycpu' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Draw.cs" />
+    <Compile Include="UserInput.cs" />
+    <Compile Include="UpdateTable.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="CheckLetter.cs" />
+    <Compile Include="UpdateImage.cs" />
+    <Compile Include="EndGame.cs" />
+    <Compile Include="Loops.cs" />
+    <Compile Include="Library.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="RandomPhrase.cs" />
+    <Compile Include="PhraseInput.cs" />
+    <Compile Include="Hint.cs" />
+    <Compile Include="Line.cs" />
+    <Compile Include="Score.cs" />
+    <Compile Include="Lives.cs" />
+    <Compile Include="Player.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
