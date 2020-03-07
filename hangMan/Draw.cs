@@ -51,7 +51,7 @@ namespace hangMan
             }
         }
 
-        public static void drawHangMan()
+        public static void drawMenu()
         {
             Console.Clear();
             Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════╗");
@@ -65,13 +65,21 @@ namespace hangMan
             Console.WriteLine("╠═════════════════════╦═══════════════════╦════════════╦══════════════════════╣");
             Console.WriteLine("║  Single player [1]  ║  Two players [2]  ║  Info [I]  ║  Exit the game [Q]   ║");
             Console.WriteLine("╚═════════════════════╩═══════════════════╩════════════╩══════════════════════╝");
-            Console.Write(" ");
+            Console.WriteLine(" ");
         }
 
         public static void doubleGameInput()
         {
-            Console.WriteLine(" Press any button for a random phrase ");
-            Console.WriteLine(" Input your own phrase [i]");
+            Console.Clear();
+            Console.WriteLine("╔══════════════════╦═══════════════════╦══════════════════╦═══════════════════╗");
+            Console.WriteLine("║ Select  category ║   Geography [0]   ║    Weather [1]   ║    Animals [2]    ║");
+            Console.WriteLine("╠══════════════════╬═══════════════════╬══════════════════╬═══════════════════╣");
+            Console.WriteLine("║    Plants [3]    ║      Food [4]     ║  Measurement [5] ║     Music [6]     ║");
+            Console.WriteLine("╠══════════════════╬═══════════════════╬══════════════════╬═══════════════════╣");
+            Console.WriteLine("║    Sports [7]    ║      Body [8]     ║    Science [9]   ║   Computer [10]   ║");
+            Console.WriteLine("╠══════════════════╩═══════════════════╩══════════════════╩═══════════════════╣");
+            Console.WriteLine("║                          Input your own phrase [i]                          ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════╝");
             Console.Write(" Your choise: ");
         }
 

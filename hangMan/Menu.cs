@@ -8,12 +8,10 @@ namespace hangMan
             switch (input)
             {
                 case "1":
-                    Library.GetPhrase();
-                    Globals.gameState = "single";
+                    singleGame();
                     break;
                 case "2":
                     doubleGame();
-                    Globals.gameState = "double";
                     break;
                 case "q":
                 case "Q":
@@ -28,13 +26,21 @@ namespace hangMan
                     break;
             }
         }
+
         public static void doubleGame()
         {
+            Draw.drawMenu();
             Globals.namePlayer[0] = Player.setPlayer(1);
             Globals.namePlayer[1] = Player.setPlayer(2);
             Draw.doubleGameInput();
-            if (Console.ReadLine().ToLower() == "i") { PhraseInput.GetPhrase(); Library.GetCategory(Library.list.Length + 1); } else { Library.GetPhrase(); }
-            
+            Library.SetCategory(Console.ReadLine());
+            Globals.gameState = "double";
+        }
+
+        public static void singleGame()
+        {
+            Library.GetPhrase();
+            Globals.gameState = "single";
         }
 
         public static void displayInfo()

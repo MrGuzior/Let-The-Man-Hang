@@ -30,7 +30,7 @@ namespace hangMan
 
         public static void MenuLoop()
         {
-            Draw.drawHangMan();
+            Draw.drawMenu();
             Menu.Handler(Console.ReadLine());
             CheckLetter.checkLetter();
         }
@@ -61,11 +61,12 @@ namespace hangMan
                 Console.WriteLine("");
                 Console.WriteLine(hang);
                 if (phrase != "") { Console.WriteLine(phrase); }
+                Console.WriteLine(" Press any button to continue...");
+                Console.ReadKey();
                 if (Globals.roundsLeft > 1)
                 {
                     Draw.doubleGameInput();
-                    if (Console.ReadLine().ToLower() == "i") { PhraseInput.GetPhrase(); Library.GetCategory(Library.list.Length + 1); }
-                    else { Library.GetPhrase(); }
+                    Library.SetCategory(Console.ReadLine());
                 }
                 if (EndGame.wonGame())
                 {

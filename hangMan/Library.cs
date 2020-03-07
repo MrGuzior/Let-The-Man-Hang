@@ -4,49 +4,11 @@ namespace hangMan
     public static class Library
     {
         //Display category
-        public static void GetCategory(int category)
+        public static void GetCategory(int input)
         {
-            switch (category)
-            {
-                case 0:
-                    Globals.category = "Geography";
-                    break;
-                case 1:
-                    Globals.category = "Weather";
-                    break;
-                case 2:
-                    Globals.category = "Animals";
-                    break;
-                case 3:
-                    Globals.category = "Plants";
-                    break;
-                case 4:
-                    Globals.category = "Food";
-                    break;
-                case 5:
-                    Globals.category = "Measurement";
-                    break;
-                case 6:
-                    Globals.category = "Music";
-                    break;
-                case 7:
-                    Globals.category = "Sports";
-                    break;
-                case 8:
-                    Globals.category = "Body";
-                    break;
-                case 9:
-                    Globals.category = "Science";
-                    break;
-                case 10:
-                    Globals.category = "Computer";
-                    break;
-                default:
-                    Globals.category = "General";
-                    break;
-            }
+            Globals.category = list[input][0];
         }
-        //Get random phrase from a random cate
+        //Get random phrase from a random category
         public static void GetPhrase()
         {
             int category = RandomPhrase.getRandomPhrase("category", list.Length);
@@ -54,12 +16,46 @@ namespace hangMan
             Globals.phrase = Library.list[category][word];
             GetCategory(category);
         }
-        //When adding a new category, add a switch case in GetCategory
+        //Set category for random word
+        public static void SetCategory(string input)
+        {
+            switch (input)
+            {
+                case "i":
+                    PhraseInput.GetPhrase();
+                    Globals.category = "General";
+                    break;
+                case "0":
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                case "9":
+                case "10":
+                    GetRandomPhrase(Int32.Parse(input));
+                    break;
+                default:
+                    GetPhrase();
+                    break;
+            }
+        }
+        //Get random phrase from set category
+        public static void GetRandomPhrase(int input)
+        {
+            int word = RandomPhrase.getRandomPhrase("word", input);
+            Globals.phrase = Library.list[input][word];
+            GetCategory(input);
+        }
+        //Phrase list, first word is used as Category name to display
         public static string[][] list =
         {
             /*Geography*/
             new string[] {
-              "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan",
+              "Geography", "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan",
               "Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Bulgaria","Burma",
               "Cambodia","Cameroon","Canada","Chad","Chile","China","Costa Rica","Croatia","Cuba","Cyprus","Czech Republic",
               "Denmark","Dominican Republic","Ecuador","Egypt","El Salvador","Estonia","Ethiopia",
@@ -94,7 +90,7 @@ namespace hangMan
             },
             /*Weather*/
             new string[] {
-              "air", "air pressure", "atmosphere", "aurora", "autumn", "avalanche", "barometer", "biosphere", "blizzard",
+              "Weather", "air", "air pressure", "atmosphere", "aurora", "autumn", "avalanche", "barometer", "biosphere", "blizzard",
               "breeze", "cirrus", "climate", "cloud", "cold front", "condensation", "contrail", "convergence", "cumulunimbus",
               "cumulus", "cyclone", "current", "degree", "dew", "drought", "dust devil", "evaporation", "flood", "fog",
               "forecast", "frost", "global warming", "hail", "heat wave", "humidity", "hurricane season", "ice age",
@@ -106,7 +102,7 @@ namespace hangMan
             },
             /*Animals*/
             new string[] {
-              "African elephant", "Albatross", "alligator", "alpaca", "bison", "anaconda", "angelfish", "amphibian", "animal",
+              "Animals", "African elephant", "Albatross", "alligator", "alpaca", "bison", "anaconda", "angelfish", "amphibian", "animal",
               "ant", "arctic fox", "armadillo", "arthropod", "baboon", "bactrian camel", "badger", "bald eagle", "basilisk",
               "bass", "bat", "bear", "beaver", "bee", "beetle", "beluga whale", "bird", "blowfish", "blue whale", "buffalo",
               "bug", "bulldog", "butterfly", "camel", "canada goose", "capybera", "cat", "cat", "cat", "caterpillar",
@@ -137,7 +133,7 @@ namespace hangMan
             },
             /*Plants*/
             new string[] {
-              "acorn", "bamboo", "bark", "bean", "berry", "blossom", "botany", "bud", "bush", "cactus", "canopy", "clover", "cork",
+              "Plants", "acorn", "bamboo", "bark", "bean", "berry", "blossom", "botany", "bud", "bush", "cactus", "canopy", "clover", "cork",
               "fern", "fertilizer", "flora", "flower", "forest", "fruit", "garden", "ginkgo", "grain", "grass", "grow", "gum",
               "herb", "hybrid", "ivy", "ivy", "jungle", "kelp", "juniper", "leaf", "leaf", "leaf", "lily", "moss", "nectar", "nut",
               "palm", "palm", "petal", "photosynthesis", "pollen", "pollinate", "resin", "root", "root", "sap", "sapling", "sea weed",
@@ -146,7 +142,7 @@ namespace hangMan
             },
             /*Food*/
             new string[] {
-              "almond", "anchovy", "appetite", "appetizer", "apple", "apricot", "artichoke", "asparagus", "avocado", "bacon", "bagel",
+              "Food", "almond", "anchovy", "appetite", "appetizer", "apple", "apricot", "artichoke", "asparagus", "avocado", "bacon", "bagel",
               "banana", "banana", "basil", "beans", "beef", "beef", "beet", "beet", "bell pepper", "berry", "biscuit", "bitter",
               "black tea", "blackberry", "blueberry", "boil", "bowl", "bread", "broccoli", "broil", "brownie", "brunch", "buns",
               "burrito", "butter", "cake", "calorie", "candy", "caramel", "carrot", "cashew", "cauliflower", "caviar", "cayenne pepper",
@@ -172,7 +168,7 @@ namespace hangMan
             },
             /*Measurement*/
             new string[] {
-              "acre", "area", "barrel", "bit", "bulk", "byte", "carat", "centimeter", "cubic", "cubuic meter", "cubit", "cup",
+              "Measurement", "acre", "area", "barrel", "bit", "bulk", "byte", "carat", "centimeter", "cubic", "cubuic meter", "cubit", "cup",
               "decigram", "decimal", "degree", "depth", "digit", "dozen", "drop", "feet", "foot", "gallon", "gauge", "grain",
               "gram", "hand", "hectare", "height", "inch", "karat", "kilo", "kilogram", "kilometer", "knot", "length", "light year",
               "liter", "mass", "measure", "megapixel", "meter", "metric system", "microgram", "micron", "mile", "milligram", "milliliter",
@@ -182,7 +178,7 @@ namespace hangMan
             },
             /*Music*/
             new string[] {
-              "accordion", "acoustic guitar", "bagpipe", "balalaika", "banjo", "banjo", "bass", "bell", "brass instruments",
+              "Music", "accordion", "acoustic guitar", "bagpipe", "balalaika", "banjo", "banjo", "bass", "bell", "brass instruments",
               "cello", "cowbell", "drum", "drumsticks", "electric guitar", "flute", "guitar", "gong", "harmonica", "harp", "horn",
               "instrument", "keyboard", "lute", "organ", "piano", "piccolo", "pipe organ", "saxophone", "triangle", "tuba",
               "ukelele", "violin", "xylophone", "blues", "chord", "forte", "jazz", "jazz", "jazz", "jazz", "jazz", "jazz",
@@ -195,7 +191,7 @@ namespace hangMan
             },
             /*Sports*/
             new string[] {
-              "archery", "athlete", "badminton", "ball", "baseball", "basketball", "bat", "bicycle", "bike", "bike", "billiards",
+              "Sports", "archery", "athlete", "badminton", "ball", "baseball", "basketball", "bat", "bicycle", "bike", "bike", "billiards",
               "bowling", "boxer", "boxing", "canoe", "catch", "champion", "championship", "cricket", "curling", "cycling", "cyclist",
               "dart", "dartboard", "deadlifting", "diving", "exercise", "figure skating", "football", "football", "frisbee", "game",
               "goal", "gold medal", "golf", "gym", "gym", "gymnastics", "handball", "high jump", "hockey", "home run", "hoop",
@@ -208,7 +204,7 @@ namespace hangMan
             },
             /*Body*/
             new string[] {
-              "abdomen", "anatomy", "ankle", "anus", "anus", "arm", "back", "belly", "big toe", "bladder", "blood", "blood vessels",
+              "Body", "abdomen", "anatomy", "ankle", "anus", "anus", "arm", "back", "belly", "big toe", "bladder", "blood", "blood vessels",
               "bone", "bone", "brain", "breast", "cell", "chest", "cheek", "chin", "collar bone", "ear", "elbow", "eye", "eye",
               "eyebrow", "eyelid", "face", "feet", "finger", "fingernail", "foot", "groin", "gums", "hair", "hand", "head", "heart",
               "heel", "hip", "hip", "jaw", "jaw", "knee", "leg", "leg", "lip", "lip", "liver", "lungs", "lungs", "muscle", "nail",
@@ -218,7 +214,7 @@ namespace hangMan
             },
             /*Science*/
             new string[] {
-              "astronomy", "atom", "biology", "botany", "cell", "chemical", "chemistry", "climate", "data", "electricity", "element",
+              "Science", "astronomy", "atom", "biology", "botany", "cell", "chemical", "chemistry", "climate", "data", "electricity", "element",
               "energy", "evolution", "experiment", "fossil", "genetics", "geology", "gravity", "hypothesis", "lab", "lab", "laboratory",
               "laws", "magnetism", "mass", "matter", "measure", "microscope", "mineral", "molecule", "motion", "organism", "paleontology",
               "particle", "physics", "research", "scale", "science", "scientist", "telescope", "theory", "thermometer", "tissue", "variable",
@@ -230,7 +226,7 @@ namespace hangMan
             },
             /*Computer*/
             new string[] {
-              "algorithm", "analog", "app", "app", "app", "application", "array", "backup", "binary", "bit", "bite", "bitmap", "blog",
+              "Computer" ,"algorithm", "analog", "app", "app", "app", "application", "array", "backup", "binary", "bit", "bite", "bitmap", "blog",
               "bookmark", "boot", "browser", "buffer", "bug", "bus", "byte", "cache", "caps lock", "captcha", "cd", "cd", "client",
               "clip board", "command", "compile", "compress", "computer", "configure", "cookie", "copy", "cpu", "dashboard", "data",
               "database", "debug", "decompress", "delete", "desktop", "development", "digital", "disk", "document", "domain",
