@@ -8,7 +8,7 @@ namespace hangMan
             switch (input)
             {
                 case "1":
-                    singleGame();
+                    singleGame(); //displaySingleGame
                     break;
                 case "2":
                     doubleGame();
@@ -22,14 +22,14 @@ namespace hangMan
                     displayInfo();
                     break;
                 default:
-                    Loops.MenuLoop();
+                    Loops.MenuLoop(); //Refresh menu, move loop to menu
                     break;
             }
         }
 
         public static void doubleGame()
         {
-            Draw.drawMenu();
+            Draw.drawMenu(); //renderMenu
             Globals.namePlayer[0] = Player.setPlayer(1);
             Globals.namePlayer[1] = Player.setPlayer(2);
             Draw.doubleGameInput();
