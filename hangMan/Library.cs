@@ -8,16 +8,29 @@ namespace hangMan
         {
             Globals.category = list[input][0];
         }
-        //Get random phrase from a random category
-        public static void GetPhrase()
-        {
-            int category = RandomPhrase.getRandomPhrase("category", list.Length);
-            int word = RandomPhrase.getRandomPhrase("word", category);
-            Globals.phrase = Library.list[category][word];
-            GetCategory(category);
-        }
-        //Set category for random word
-        public static void SetCategory(string input)
+    //Get random phrase from a random category
+
+    //public static void GetPhrase()
+    //{
+    //    int category = RandomPhrase.getRandomPhrase("category", list.Length);
+    //    int word = RandomPhrase.getRandomPhrase("word", category);
+    //    Globals.phrase = Library.list[category][word];
+    //    GetCategory(category);
+    //}
+
+    public static void GetPhrase()
+    {
+      //int category = RandomPhrase.getRandomPhrase("category", list.Length);
+      //int word = RandomPhrase.getRandomPhrase("word", category);
+      int word = 1;
+      int category = 1;
+      Globals.phrase = Library.list[category][word];
+      GetCategory(category);
+    }
+
+
+    //Set category for random word
+    public static void SetCategory(string input)
         {
             switch (input)
             {

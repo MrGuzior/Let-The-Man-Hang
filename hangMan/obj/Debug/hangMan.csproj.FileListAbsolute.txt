@@ -3,3 +3,9 @@
 /Users/Guzior/Projects/hangMan/hangMan/obj/Debug/hangMan.csprojAssemblyReference.cache
 /Users/Guzior/Projects/hangMan/hangMan/obj/Debug/hangMan.exe
 /Users/Guzior/Projects/hangMan/hangMan/obj/Debug/hangMan.pdb
+/Users/salt-dev/Desktop/Github/Let-The-Man-Hang/hangMan/bin/Debug/hangMan.exe
+/Users/salt-dev/Desktop/Github/Let-The-Man-Hang/hangMan/bin/Debug/hangMan.pdb
+/Users/salt-dev/Desktop/Github/Let-The-Man-Hang/hangMan/obj/Debug/hangMan.csprojAssemblyReference.cache
+/Users/salt-dev/Desktop/Github/Let-The-Man-Hang/hangMan/obj/Debug/hangMan.csproj.CoreCompileInputs.cache
+/Users/salt-dev/Desktop/Github/Let-The-Man-Hang/hangMan/obj/Debug/hangMan.exe
+/Users/salt-dev/Desktop/Github/Let-The-Man-Hang/hangMan/obj/Debug/hangMan.pdb

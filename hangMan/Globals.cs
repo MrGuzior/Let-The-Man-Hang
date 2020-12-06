@@ -8,7 +8,7 @@ namespace hangMan
         public const int triesLeftConst = 9;
         public const int hintsLeftConst = 2;
         public const int scoreConst = 0;
-        public const int livesLeftConst = 3;
+        public const int livesLeftConst = 1; //3
         public const string categoryConst = "";
         public static int[] scorePlayerConst = { 0, 0 };
         public static string[] namePlayerConst = { "", "" };

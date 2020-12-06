@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{0F046865-556F-4714-8250-8A49EC4471AC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="hangMan/Library.cs">
+    <Files>
+      <File FileName="hangMan/Program.cs" Line="28" Column="6" />
+      <File FileName="hangMan/CheckLetter.cs" Line="1" Column="1" />
+      <File FileName="hangMan/Draw.cs" Line="1" Column="1" />
+      <File FileName="hangMan/Menu.cs" Line="1" Column="1" />
+      <File FileName="hangMan/Loops.cs" Line="20" Column="45" />
+      <File FileName="hangMan/Lives.cs" Line="1" Column="1" />
+      <File FileName="hangMan/Library.cs" Line="1" Column="1" />
+      <File FileName="hangMan/Outcome.cs" Line="36" Column="1" NotebookId="1" />
+      <File FileName="hangMan/EndGame.cs" Line="47" Column="1" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="hangMan" expanded="True">
+            <Node name="hangMan" expanded="True">
+              <Node name="Properties" expanded="True" />
+              <Node name="Library.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.hangMan PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

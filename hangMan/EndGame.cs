@@ -3,43 +3,65 @@ namespace hangMan
 {
     public class EndGame
     {
-        //Check the round outcome
-        public static bool lostGame()
-        {
-            bool output = false;
+    ////Check the round outcome
+    //public static bool lostGame()
+    //{
+    //    bool output = false;
 
-            if(Globals.triesLeft == 0)
-            {
-                output = true;
-            }
-            return output;
-        }
-        public static bool wonGame()
-        {
-            bool output = false;
+    //    if(Globals.triesLeft == 0)
+    //    {
+    //        output = true;
+    //    }
+    //    return output;
+    //}
+    //public static bool wonGame()
+    //{
+    //    bool output = false;
 
-            if (!Globals.phraseMarker.Contains("_"))
-            {
-                output = true;
-            }
+    //    if (!Globals.phraseMarker.Contains("_"))
+    //    {
+    //        output = true;
+    //    }
 
-            return output;
-        }
-        //Check if the game has ended
-        public static bool SingleEndGame()
-        {
-            bool output = false;
-            if (Globals.livesLeft < 0)
-            {
-                output = true;
-                Console.WriteLine(" Your total score: " + Globals.score);
-                Console.WriteLine(" Press any button to continue...");
-                Console.ReadKey();
-                UpdateTable.restartGame();
-            }
-            return output;
-        }
-        public static bool DoubleEndGame()
+    //    return output;
+    //}
+
+    public static bool lostGame() => Globals.triesLeft == 0;
+    public static bool wonGame() => !Globals.phraseMarker.Contains("_");
+
+    //Check if the game has ended
+    //public static bool SingleEndGame()
+    //    {
+    //        bool output = false;
+    //        if (Globals.livesLeft < 0)
+    //        {
+    //            output = true;
+    //            Console.WriteLine(" Your total score: " + Globals.score);
+    //            Console.WriteLine(" Press any button to continue...");
+    //            Console.ReadKey();
+    //            UpdateTable.restartGame();
+    //        }
+    //        return output;
+    //    }
+
+
+    public static bool SingleEndGame()
+    {
+      bool handleGameEnd()
+      {
+        Console.WriteLine(" Your total score: " + Globals.score);
+        Console.WriteLine(" Press any button to continue...");
+        Console.ReadKey();
+        UpdateTable.restartGame();
+        return true;
+      }
+      return Globals.livesLeft < 0 && handleGameEnd();
+    }
+
+
+
+
+    public static bool DoubleEndGame()
         {
             bool output = false;
             if (Globals.roundsLeft < 1)

@@ -49,6 +49,7 @@
     <Compile Include="Score.cs" />
     <Compile Include="Lives.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="Outcome.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
